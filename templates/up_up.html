@@ -1,0 +1,29 @@
+{% extends 'up_squelette.html' %} 
+{% block title %}File Upload Demo{% endblock %} 
+{% block main %} 
+    <h1>File Upload Demo</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="EnvName">Select Environment</label>
+        <select name="EnvName" class="EnvName">
+                    <option selected="selected" value="DEV">Development</option>
+                    <option value="TEST">Test</option>
+                    <option value="PROD">Production</option>
+            </select>
+        <label for="DestDir">Select the directory to be uploaded</label>
+        <select name="DestDir" class="DestDir">
+                {% for dir in target_dirs: %}
+                    <option value="{{ dir }}">{{ dir }}</option>
+                {% endfor %}
+            </select>
+        <label for="fic">Upload files from Desktop</label><input id="fic" type="file" name="UploadFile1" />
+        <label for="fic">Upload files from Desktop</label><input id="fic" type="file" name="UploadFile2" />
+        <label for="fic">Upload files from Desktop</label><input id="fic" type="file" name="UploadFile3" />
+        <label for="pw">Password</label><input id="pw" type="password" name="pw" />
+        <input id="btsub" type="submit" value="Upload" />
+    </form>
+    {% block javascript %}
+        <script src="static/jquery-3.2.1.min.js"></script>
+        <script src="static/FUSelectChange.js"></script>
+    {% endblock %}
+
+{% endblock %}

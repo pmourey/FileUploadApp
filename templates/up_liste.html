@@ -1,0 +1,12 @@
+{% extends 'up_squelette.html' %}
+{% block title %}Liste des fichiers{% endblock %} 
+{% block main %}
+<h1>File listing of directory "{{dirName}}" included in {{envName}} environment:</h1>
+{% if fileNames %}
+    <ul class="fichiers">
+        {% for fileName in fileNames %}
+        <li><a href="{{ url_for('upped', envName=envName, dirName=dirName, fileName=fileName) }}">{{ fileName }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %} 
+{% endblock %}
