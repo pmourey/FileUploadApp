@@ -26,7 +26,7 @@ app.config.update(
 
 #Easier Debugging of Your Flask Apps With Debug Toolbar 
 toolbar = DebugToolbarExtension(app)
-app. config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 # returns the environment selected in the ComboBox
 def get_env_path(envName):
